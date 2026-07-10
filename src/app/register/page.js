@@ -32,13 +32,13 @@ export default function Register() {
           </h1>
         </div>
         <form className="p-6 space-y-5" onSubmit={handleSubmit}>
-            <label className="text-black">กรุณาระบุ_ชื่อ {form.txt_firstname}</label>
+            <label className="text-black">กรุณาระบุชื่อ {form.txt_firstname}</label>
             <input type="text" name='txt_firstname' onChange={handleChange} className="w-full border text-black border-black rounded-md px-4 py-2" placeholder="Firstname" value={form.txt_firstname} onChange={handleChange}/>
-            <label className="text-black">กรุณาระบุ_นามสกุล {form.txt_lastname}</label>
+            <label className="text-black">กรุณาระบุนามสกุล {form.txt_lastname}</label>
             <input type="text" name='txt_lastname' onChange={handleChange} className="w-full border text-black border-black rounded-md px-4 py-2" placeholder="Lastname" value={form.txt_lastname} onChange={handleChange}/>
-            <label className="text-black">กรุณาระบุ_  Username {form.txt_username}</label>
+            <label className="text-black">กรุณาระบุUsername {form.txt_username}</label>
             <input type="text" name='txt_username' onChange={handleChange} className="w-full border text-black border-black rounded-md px-4 py-2" placeholder="Username" value={form.txt_username} onChange={handleChange}/>
-            <label className="text-black">กรุณาระบุ_Password {form.txt_password}</label>
+            <label className="text-black">กรุณาระบุPassword </label>
             <input type="password" name='txt_password' onChange={handleChange} className="w-full border text-black border-black rounded-md px-4 py-2" placeholder="Password" value={form.txt_password} onChange={handleChange}/>
             <button type="submit" className="px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
               บันทึกข้อมูล
