@@ -1,13 +1,14 @@
 "use client";
-import React from 'react'
+
 import { useState } from "react";
+
 export default function Register() {
-     const [form, setForm] = useState({
-        txt_firstname: "",
-        txt_lastname: "",
-        txt_username: "",
-        txt_password: ""
-   });
+  const [form, setForm] = useState({
+    txt_firstname: "",
+    txt_lastname: "",
+    txt_username: "",
+    txt_password: "",
+  });
 
   const handleChange = (e) => {
     setForm({
@@ -18,33 +19,90 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form.txt_firstname);
-  }
+    console.log(form);
+  };
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
-        <div className="bg-white rounded-lg shadow-md border">
-       
+    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 flex items-center justify-center px-4 py-10">
+      <div className="w-full max-w-2xl bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden">
+
         {/* Header */}
-        <div className="border-b px-6 py-4">
-          <h1 className="text-2xl font-bold text-gray-800">
-            ฟอร์มสมัครสมาชิก
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center py-8">
+          <h1 className="text-4xl font-bold">
+            สมัครสมาชิก
           </h1>
+          <p className="mt-2 text-blue-100">
+            กรอกข้อมูลเพื่อสร้างบัญชีผู้ใช้งาน
+          </p>
         </div>
-        <form className="p-6 space-y-5" onSubmit={handleSubmit}>
-            <label className="text-black">กรุณาระบุชื่อ {form.txt_firstname}</label>
-            <input type="text" name='txt_firstname' onChange={handleChange} className="w-full border text-black border-black rounded-md px-4 py-2" placeholder="Firstname" value={form.txt_firstname} onChange={handleChange}/>
-            <label className="text-black">กรุณาระบุนามสกุล {form.txt_lastname}</label>
-            <input type="text" name='txt_lastname' onChange={handleChange} className="w-full border text-black border-black rounded-md px-4 py-2" placeholder="Lastname" value={form.txt_lastname} onChange={handleChange}/>
-            <label className="text-black">กรุณาระบุUsername {form.txt_username}</label>
-            <input type="text" name='txt_username' onChange={handleChange} className="w-full border text-black border-black rounded-md px-4 py-2" placeholder="Username" value={form.txt_username} onChange={handleChange}/>
-            <label className="text-black">กรุณาระบุPassword </label>
-            <input type="password" name='txt_password' onChange={handleChange} className="w-full border text-black border-black rounded-md px-4 py-2" placeholder="Password" value={form.txt_password} onChange={handleChange}/>
-            <button type="submit" className="px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
-              บันทึกข้อมูล
-            </button>
-          </form>
-        </div>
+
+        {/* Form */}
+        <form className="p-8 space-y-5" onSubmit={handleSubmit}>
+
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              ชื่อ
+            </label>
+            <input
+              type="text"
+              name="txt_firstname"
+              value={form.txt_firstname}
+              onChange={handleChange}
+              placeholder="กรอกชื่อ"
+              className="w-full px-4 py-3 border rounded-xl text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-200 transition"
+            />
+          </div>
+
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              นามสกุล
+            </label>
+            <input
+              type="text"
+              name="txt_lastname"
+              value={form.txt_lastname}
+              onChange={handleChange}
+              placeholder="กรอกนามสกุล"
+              className="w-full px-4 py-3 border rounded-xl text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-200 transition"
+            />
+          </div>
+
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Username
+            </label>
+            <input
+              type="text"
+              name="txt_username"
+              value={form.txt_username}
+              onChange={handleChange}
+              placeholder="กรอก Username"
+              className="w-full px-4 py-3 border rounded-xl text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-200 transition"
+            />
+          </div>
+
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Password
+            </label>
+            <input
+              type="password"
+              name="txt_password"
+              value={form.txt_password}
+              onChange={handleChange}
+              placeholder="กรอก Password"
+              className="w-full px-4 py-3 border rounded-xl text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-200 transition"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-lg shadow-lg hover:scale-[1.02] hover:shadow-xl transition duration-300"
+          >
+            สมัครสมาชิก
+          </button>
+        </form>
       </div>
-  )
+    </div>
+  );
 }
